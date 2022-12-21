@@ -21,13 +21,13 @@ export const ThemeProvider = (props) => {
     }
 
     const data = {
-        theme: {},
+        theme: darkMode ? darkTheme : lightTheme,
         darkMode,
         toggleTheme
     }
     return (
         <ThemeContext.Provider value={data}>
-            <Theme theme={darkMode ? darkTheme : lightTheme}>{ children }</Theme>
+            <Theme theme={data.theme}>{ children }</Theme>
         </ThemeContext.Provider>
     )
 }
