@@ -18,7 +18,7 @@ export const ThemeProvider = (props) => {
     }
 
     const data = {
-        theme: null,
+        theme: {},
         darkMode,
         toggleTheme
     }
