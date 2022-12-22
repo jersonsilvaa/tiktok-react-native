@@ -14,9 +14,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.conf import settings
+from django.conf.urls.static import static
+
 from django.contrib import admin
 from django.urls import path, include
-from django.conf.urls.static import static
 
 from drf_yasg import openapi
 from drf_yasg.views import get_schema_view
@@ -37,7 +38,7 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api-auth/', include('rest_framework.urls')),
+    path('api/', include('users.api.router')),
     path('redocs/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
     path('docs/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui')
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
