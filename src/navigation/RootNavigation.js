@@ -1,8 +1,9 @@
-import { SafeAreaView } from "react-native-safe-area-context"
-import { Text, Button } from "react-native-elements"
-import { useTheme } from '../utils/import'
+import { SafeAreaView } from 'react-native-safe-area-context'
+import { Text, Button } from 'react-native-elements'
 
-const RootNavigation = () => {
+import { useTheme } from '../hooks/useTheme'
+
+export const RootNavigation = () => {
     const { darkMode, toggleTheme } = useTheme()
     const mode = {
         theme: darkMode ? 'Cambiar modo claro' : 'Cambiar modo oscuro',
@@ -16,5 +17,3 @@ const RootNavigation = () => {
         </SafeAreaView>
     </>
 }
-
-export default RootNavigation
