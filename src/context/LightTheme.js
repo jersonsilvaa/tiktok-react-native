@@ -7,7 +7,7 @@ export const lightTheme = {
     },
     Text: {
         style: {
-            color: '#000000'
+            color: '#ffffff'
         }
     },
     Icon: {
