@@ -16,8 +16,16 @@ export const ThemeProvider = (props) => {
     const { children } = props
     const [darkMode, setDarMode] = useState(true)
 
-    const toggleTheme = () => {
+    useEffect(() => {
+        (async () => {
+            const res = await AsyncStorage.getItem('theme')
+            res && setDarMode(JSON.parse(res))
+        })()
+    }, [])
+
+    const toggleTheme = async () => {
         setDarMode(!darkMode)
+        await AsyncStorage.setItem('theme', JSON.stringify(!darkMode))
     }
 
     const data = {
