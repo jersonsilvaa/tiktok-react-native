@@ -3,10 +3,13 @@ import { View } from 'react-native'
 import { Input, Button } from 'react-native-elements'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
+import { Auth } from '../../../api/auth'
 import { useFormik } from 'formik'
 import { InitialValues, validationSchema } from './RegisterEmailScreen.data'
 
 import { styled } from './styles'
+
+const auth = new Auth()
 
 const RegisterEmailScreen = (props) => {
     const { navigation } = props
@@ -18,8 +21,13 @@ const RegisterEmailScreen = (props) => {
         initialValues: InitialValues(),
         validationSchema: validationSchema(),
         validateOnChange: false,
-        onSubmit: (formValue) => {
-            console.log(formValue)
+        onSubmit: async (formValue) => {
+            try {
+                await auth.register(formValue)
+                navigation.goBack()
+            } catch (error) {
+                console.error(error)
+            }
         }
     })
 
