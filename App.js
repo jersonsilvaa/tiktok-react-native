@@ -1,14 +1,13 @@
-import { Button, Text } from 'react-native-elements'
-import { SafeAreaView } from 'react-native-safe-area-context'
-
-import './src/utils/yup-methods'
-
+import { AuthProvider } from './src/context/AuthContext'
 import { ThemeProvider, RootNavigation } from './src/utils/import'
+import './src/utils/yup-methods'
 
 const App = () => {
   return <>
     <ThemeProvider>
-      <RootNavigation />
+      <AuthProvider>
+        <RootNavigation />
+      </AuthProvider>
     </ThemeProvider>
   </>
 }
