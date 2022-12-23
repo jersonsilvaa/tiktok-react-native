@@ -2,15 +2,14 @@ import * as Yup from 'yup'
 
 export const InitialValues = () => {
     return {
-        email: '',
+        username: '',
         password: ''
     }
 }
 
 export const validationSchema = () => {
     return Yup.object({
-        email: Yup.string()
-            .email('El correo no es válido.')
+        username: Yup.string()
             .required('El correo es obligatorio.'),
 
         password: Yup.string()
