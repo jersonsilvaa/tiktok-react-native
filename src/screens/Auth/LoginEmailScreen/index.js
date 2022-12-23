@@ -3,10 +3,13 @@ import { View } from 'react-native'
 import { Button, Input } from 'react-native-elements'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
+import { Auth } from '../../../api/auth'
 import { useFormik } from 'formik'
 import { InitialValues, validationSchema } from './LoginEmailScreen.data'
 
 import { styled } from './styles'
+
+const auth = new Auth()
 
 const LoginEmailScreen = () => {
   const styles = styled()
@@ -18,38 +21,43 @@ const LoginEmailScreen = () => {
     initialValues: InitialValues(),
     validationSchema: validationSchema(),
     validateOnChange: false,
-    onSubmit: (formValue) => {
-      console.log(formValue)
+    onSubmit: async (formValue) => {
+      try {
+        const res = await auth.login(formValue)
+        console.log(res)
+      } catch (error) {
+        console.error(error)
+      }
     }
   })
   return (
     <SafeAreaView style={styles.content}>
       <View style={styles.form_content}>
-                <Input
-                    placeholder='Ingrese su correo electrónico'
-                    autoCapitalize='none'
-                    onChangeText={text => formik.setFieldValue('email', text)}
-                    errorMessage={formik.errors.email}
-                />
-                <Input
-                    placeholder='Ingrese su contraseña'
-                    secureTextEntry={!showPassword}
-                    rightIcon={{
-                        type: 'material-community',
-                        onPress: onShowPasswordInput,
-                        name: showPassword ? 'eye-off-outline' : 'eye-outline'
-                    }}
-                    onChangeText={text => formik.setFieldValue('password', text)}
-                    errorMessage={formik.errors.password}
-                />
-            </View>
+      <Input
+          placeholder="Ingrese su nombre de usuario"
+          autoCapitalize="none"
+          onChangeText={text => formik.setFieldValue('username', text)}
+          errorMessage={formik.errors.username}
+        />
+        <Input
+          placeholder='Ingrese su contraseña'
+          secureTextEntry={!showPassword}
+          rightIcon={{
+            type: 'material-community',
+            onPress: onShowPasswordInput,
+            name: showPassword ? 'eye-off-outline' : 'eye-outline'
+          }}
+          onChangeText={text => formik.setFieldValue('password', text)}
+          errorMessage={formik.errors.password}
+        />
+      </View>
 
-            <Button
-                title='Iniciar sesión'
-                containerStyle={styles.button_content}
-                onPress={formik.handleSubmit}
-                loading={formik.isSubmitting}
-            />
+      <Button
+        title='Iniciar sesión'
+        containerStyle={styles.button_content}
+        onPress={formik.handleSubmit}
+        loading={formik.isSubmitting}
+      />
     </SafeAreaView>
   )
 }
