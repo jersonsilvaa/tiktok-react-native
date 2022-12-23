@@ -20,13 +20,14 @@ export const validationSchema = () => {
             .required('El nombre es obligatorio.'),
 
         username: Yup.string()
-            .required('El nombre de usuario es obligatorio.'),
+            .required('El nombre de usuario es obligatorio.')
+            .noSpacing('El campo no puede contener espacios.'),
 
         password: Yup.string()
             .required('La contraseña es obligatoria.'),
 
         repeatPassword: Yup.string()
             .required('La contraseña es obligatoria.').
-            oneOf([Yup.ref('password')], 'Las contraseñas no coinciden, asegurese que sea la correcta.')
+            oneOf([Yup.ref('password')],'Las contraseñas no coinciden, asegurese que sea la correcta.')
     })
 }
