@@ -22,7 +22,7 @@ export const darkTheme = {
     },
     Button: {
         buttonStyle: {
-            backgroundColor: '#2185d0'
+            backgroundColor: '#FE2C55'
         }
     }
 }
