@@ -1,7 +1,7 @@
 const auth = {
     auth: 'auth',
-    loginEmail: 'LoginEmail',
-    registerEmail: 'RegisterEmail'
+    loginEmail: 'Iniciar sesión',
+    registerEmail: 'Registrarse'
 }
 
 export const screen = {
