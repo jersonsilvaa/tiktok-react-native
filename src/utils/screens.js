@@ -1,3 +1,7 @@
+const app = {
+    tab: 'Tab'
+}
+
 const auth = {
     auth: 'auth',
     loginEmail: 'Iniciar sesión',
@@ -5,5 +9,6 @@ const auth = {
 }
 
 export const screen = {
-    auth
+    auth,
+    app
 }
