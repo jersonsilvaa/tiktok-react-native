@@ -18,6 +18,11 @@ const getTokens = async () => {
     }
 }
 
+const removeTokens = async () => {
+    await AsyncStorage.removeItem(ENV.JWT.ACCESS)
+    await AsyncStorage.removeItem(ENV.JWT.REFRESH)
+}
+
 const hasExpired = token => {
     if(!token) return false
 
@@ -34,5 +39,6 @@ const hasExpired = token => {
 export const jwt = {
     saveTokens,
     getTokens,
-    hasExpired
+    hasExpired,
+    removeTokens
 }

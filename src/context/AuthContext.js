@@ -65,6 +65,7 @@ export const AuthProvider = (props) => {
         setAuth(null)
         setAccessToken(null)
         setRefreshToken(null)
+        jwt.removeTokens()
     }
 
     const data = {
