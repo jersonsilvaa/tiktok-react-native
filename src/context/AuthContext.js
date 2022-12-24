@@ -1,6 +1,9 @@
 import { useState, useEffect, createContext } from 'react'
 import jwtDecode from 'jwt-decode'
 import { jwt } from '../api/jwt'
+import { Auth } from '../api/auth'
+
+const authController = new Auth()
 
 export const AuthContext = createContext({
     auth: undefined,
@@ -19,7 +22,29 @@ export const AuthProvider = (props) => {
     useEffect(() => {
         (async () => {
             const res = await jwt.getTokens()
-            login(res)
+            const accessExpired = jwt.hasExpired(res.access)
+
+            if (accessExpired) {
+                const refreshExpired = jwt.hasExpired(res.refresh)
+
+                if (refreshExpired) {
+                    logout()
+                } else {
+                    try {
+                        const result = await authController.refreshToken(res.refresh)
+                        jwt.saveTokens(result.access, res.refresh)
+                        login({
+                            access: result.access,
+                            refresh: res.refresh
+                        })
+                    } catch (error) {
+                        console.error(error)
+                        logout()
+                    }
+                }
+            } else {
+                login(res)
+            }
         })()
     }, [])
 

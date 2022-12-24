@@ -36,4 +36,22 @@ export class Auth {
 
         return result
     }
+
+    async refreshToken(token) {
+        const url = `${ENV.BASE_API}/${ENV.API_ROUTES.REFRESH_TOKEN}/`
+        const params = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ refresh: token })
+        }
+
+        const res = await fetch(url, params)
+        const result = await res.json()
+
+        if (res.status !== 200) throw result
+
+        return result
+    }
 }

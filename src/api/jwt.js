@@ -18,7 +18,21 @@ const getTokens = async () => {
     }
 }
 
+const hasExpired = token => {
+    if(!token) return false
+
+    const { exp } = jwtDecode(token)
+    const currentDate = new Date().getTime()
+    const expiredDate = new Date(exp * 1000).getTime()
+
+    if (currentDate > expiredDate) {
+        return true
+    }
+    return false
+}
+
 export const jwt = {
     saveTokens,
-    getTokens
+    getTokens,
+    hasExpired
 }
