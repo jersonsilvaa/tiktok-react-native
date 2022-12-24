@@ -4,6 +4,7 @@ import { Button, Input } from 'react-native-elements'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
 import { Auth } from '../../../api/auth'
+import { useAuth } from '../../../hooks/useAuth'
 import { useFormik } from 'formik'
 import { InitialValues, validationSchema } from './LoginEmailScreen.data'
 
@@ -14,6 +15,7 @@ const auth = new Auth()
 const LoginEmailScreen = () => {
   const styles = styled()
   const [showPassword, setShowPassword] = useState(false)
+  const { login } = useAuth()
 
   const onShowPasswordInput = () => setShowPassword(prevState => !prevState)
 
@@ -24,7 +26,7 @@ const LoginEmailScreen = () => {
     onSubmit: async (formValue) => {
       try {
         const res = await auth.login(formValue)
-        console.log(res)
+        login(res)
       } catch (error) {
         console.error(error)
       }
