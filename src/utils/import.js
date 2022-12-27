@@ -1,5 +1,7 @@
 import { ENV } from './constants'
 import { screen } from './screens'
+import { HomeStack } from '../navigation/stacks/HomeStack'
+import { HomeScreen } from '../screens/HomeScreen'
 import { TestScreen } from '../screens/TestScreen'
 import { ThemeProvider } from '../context/ThemeProvider'
 import { RootNavigation } from '../navigation/RootNavigation'
@@ -9,4 +11,4 @@ import AuthScreen from '../screens/Auth/AuthScreen'
 import LoginEmailScreen from '../screens/Auth/LoginEmailScreen'
 import RegisterEmailScreen from '../screens/Auth/RegisterEmailScreen'
 
-export { ThemeProvider, RootNavigation, AuthScreen, getNavigationTheme, RegisterEmailScreen, LoginEmailScreen, screen, ENV, TestScreen }
+export { ThemeProvider, RootNavigation, AuthScreen, getNavigationTheme, RegisterEmailScreen, LoginEmailScreen, screen, ENV, TestScreen, HomeScreen, HomeStack }
