@@ -8,7 +8,32 @@ const auth = {
     registerEmail: 'Registrarse'
 }
 
+const home = {
+    tab: 'Inicio'
+}
+
+const friends = {
+    tab: 'Amigos'
+}
+
+const upload = {
+    tab: 'Subir vídeo'
+}
+
+const notifications = {
+    tab: 'Notificaciones'
+}
+
+const account = {
+    tab: 'Perfil'
+}
+
 export const screen = {
     auth,
-    app
+    app,
+    home,
+    friends,
+    upload,
+    notifications,
+    account
 }
