@@ -9,23 +9,28 @@ const auth = {
 }
 
 const home = {
-    tab: 'Inicio'
+    tab: 'Inicio',
+    home: 'Inicio'
 }
 
 const friends = {
-    tab: 'Amigos'
+    tab: 'Amigos',
+    friends: 'Amigos'
 }
 
 const upload = {
-    tab: 'Subir vídeo'
+    tab: 'Subir vídeo',
+    uploadVideo: 'Subir video'
 }
 
 const notifications = {
-    tab: 'Notificaciones'
+    tab: 'Notificaciones',
+    notifications: 'Notificaciones'
 }
 
 const account = {
-    tab: 'Perfil'
+    tab: 'Perfil',
+    account: 'Perfl'
 }
 
 export const screen = {
