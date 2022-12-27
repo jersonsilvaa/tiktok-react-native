@@ -2,13 +2,20 @@ import { ENV } from './constants'
 import { screen } from './screens'
 import { HomeStack } from '../navigation/stacks/HomeStack'
 import { HomeScreen } from '../screens/HomeScreen'
-import { TestScreen } from '../screens/TestScreen'
+import { UploadVideo } from '../screens/UploadVideo'
+import { AccountStack } from '../navigation/stacks/AccountStack'
+import { FriendsStack } from '../navigation/stacks/FriendsStack'
+import { AccountScreen } from '../screens/AccountScreen'
+import { FriendsScreen } from '../screens/FriendsScreen'
 import { ThemeProvider } from '../context/ThemeProvider'
 import { RootNavigation } from '../navigation/RootNavigation'
+import { UploadVideoStack } from '../navigation/stacks/UploadVideoStack'
+import { NotificationsStack } from '../navigation/stacks/NotificationsStack'
 import { getNavigationTheme } from './navigation-theme'
+import { NotificationsScreen } from '../screens/NotificationsScreen'
 
 import AuthScreen from '../screens/Auth/AuthScreen'
 import LoginEmailScreen from '../screens/Auth/LoginEmailScreen'
 import RegisterEmailScreen from '../screens/Auth/RegisterEmailScreen'
 
-export { ThemeProvider, RootNavigation, AuthScreen, getNavigationTheme, RegisterEmailScreen, LoginEmailScreen, screen, ENV, TestScreen, HomeScreen, HomeStack }
+export { ThemeProvider, RootNavigation, AuthScreen, getNavigationTheme, RegisterEmailScreen, LoginEmailScreen, screen, ENV, HomeScreen, HomeStack, FriendsScreen, FriendsStack, UploadVideo, UploadVideoStack, NotificationsScreen, NotificationsStack, AccountScreen, AccountStack }
