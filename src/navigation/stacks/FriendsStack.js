@@ -1,16 +1,16 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
-import { HomeScreen, screen } from '../../utils/import'
+import { FriendsScreen, screen } from '../../utils/import'
 
 const Stack = createNativeStackNavigator()
 
-export const HomeStack = () => {
+export const FriendsStack = () => {
     return <>
         <Stack.Navigator>
             <Stack.Screen
-                name={screen.home.home}
-                component={HomeScreen}
-                options={{title: '', headerShown: false}}
+                name={screen.friends.friends}
+                component={FriendsScreen}
+                options={{headerShown: false}}
             />
         </Stack.Navigator>
     </>
