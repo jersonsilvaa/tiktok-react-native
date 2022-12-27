@@ -1,6 +1,6 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
-import { screen, HomeStack, FriendsStack, UploadVideo, NotificationsScreen, AccountScreen } from '../utils/import'
+import { screen, HomeStack, FriendsStack, UploadVideoStack, AccountStack, NotificationsStack } from '../utils/import'
 
 const Tab = createBottomTabNavigator()
 
@@ -10,27 +10,42 @@ export const TabNavigation = () => {
             <Tab.Screen
                 name={screen.home.tab}
                 component={HomeStack}
-                options={{headerShown: false}}
+                options={{headerShown: false,
+                    tabBarLabelStyle: {
+                    display: 'none'
+                }}}
             />
             <Tab.Screen
                 name={screen.friends.tab}
                 component={FriendsStack}
-                options={{headerShown: false}}
+                options={{headerShown: false,
+                    tabBarLabelStyle: {
+                    display: 'none'
+                }}}
             />
             <Tab.Screen
                 name={screen.upload.tab}
-                component={UploadVideo}
-                options={{headerShown: false}}
+                component={UploadVideoStack}
+                options={{headerShown: false,
+                    tabBarLabelStyle: {
+                    display: 'none'
+                }}}
             />
             <Tab.Screen
                 name={screen.notifications.tab}
-                component={NotificationsScreen}
-                options={{headerShown: false}}
+                component={NotificationsStack}
+                options={{headerShown: false,
+                    tabBarLabelStyle: {
+                    display: 'none'
+                }}}
             />
             <Tab.Screen
                 name={screen.account.tab}
-                component={AccountScreen}
-                options={{headerShown: false}}
+                component={AccountStack}
+                options={{headerShown: false,
+                    tabBarLabelStyle: {
+                    display: 'none'
+                }}}
             />
         </Tab.Navigator>
     </>
