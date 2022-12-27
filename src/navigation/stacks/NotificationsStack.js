@@ -10,7 +10,7 @@ export const NotificationsStack = () => {
             <Stack.Screen
                 name={screen.notifications.notifications}
                 component={NotificationsScreen}
-                options={{headerShown: false}}
+                options={{title: 'Toda la actividad'}}
             />
         </Stack.Navigator>
     </>

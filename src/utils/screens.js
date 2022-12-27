@@ -20,7 +20,8 @@ const friends = {
 
 const upload = {
     tab: 'Subir vídeo',
-    uploadVideo: 'Subir video'
+    uploadVideo: 'Subir video',
+    publishVideo: 'Publicar video'
 }
 
 const notifications = {
@@ -30,7 +31,12 @@ const notifications = {
 
 const account = {
     tab: 'Perfil',
-    account: 'Perfl'
+    account: 'Perfl',
+    config: 'Configuraciones',
+    changeName: 'Cambiar nombre',
+    changeDescription: 'Cambiar descripción',
+    changeWebsite: 'Cambiar sitio web',
+    changeInstagram: 'Cambiar perfil de instagram'
 }
 
 export const screen = {

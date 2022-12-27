@@ -10,7 +10,7 @@ export const FriendsStack = () => {
             <Stack.Screen
                 name={screen.friends.friends}
                 component={FriendsScreen}
-                options={{headerShown: false}}
+                options={{title: 'Amigos'}}
             />
         </Stack.Navigator>
     </>
