@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'drf_yasg',
     'cloudinary_storage',
     'rest_framework_simplejwt',
-    'users'
+    'users',
+    'video'
 ]
 
 MIDDLEWARE = [
