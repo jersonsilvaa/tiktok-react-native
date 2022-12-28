@@ -15,9 +15,11 @@ def getImagePath(instance, filename):
 
 class Video(models.Model):
     description = models.TextField()
+    music = models.TextField()
     video = models.FileField(upload_to=getVideoPath)
     image = models.ImageField(upload_to=getImagePath)
     user = models.ForeignKey('users.User', on_delete=models.CASCADE)
-    sharedCounter = models.IntegerField(default=0)
+    shareCounter = models.IntegerField(default=0)
     likesCounter = models.IntegerField(default=0)
+    commentsCounter = models.IntegerField(default=0)
     createdAt = models.DateTimeField(auto_now_add=True)
