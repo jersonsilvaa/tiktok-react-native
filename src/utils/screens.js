@@ -1,5 +1,11 @@
 const app = {
-    tab: 'Tab'
+    tab: 'Tab',
+    followers: 'Seguidores',
+    followeds: 'Sigue',
+    user: 'Usuario',
+    video: 'Video',
+    videoPublished: 'Videos publicados',
+    videoFavorites: 'Videos favoritos'
 }
 
 const auth = {
