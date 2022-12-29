@@ -1,4 +1,4 @@
-const SERVER_IP = '192.168.1.108:8000'
+const SERVER_IP = '192.168.1.109:8000'
 
 export const ENV = {
     BASE_PATH: `http://${SERVER_IP}`,
